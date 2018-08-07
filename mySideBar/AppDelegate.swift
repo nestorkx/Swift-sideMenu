@@ -16,6 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame:UIScreen.main.bounds)
+        if let window = self.window {
+            // Color de fondo principal para toda la aplicacion
+            window.backgroundColor = UIColor.white
+        
+            // Le decimos que toda la aplicacion se va a controlar desde el archivo ViewController.swift
+            let nav      = UINavigationController()
+            let mainView = ViewController()
+            nav.viewControllers = [mainView]
+            window.rootViewController = nav
+            window.makeKeyAndVisible()
+        }
+        
         return true
     }
 
